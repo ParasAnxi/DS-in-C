@@ -24,6 +24,9 @@ int precedence(char x){
     if(x == '/' || x == '*'){
         return 2;
     }
+    if(x == '^'){
+        return 3;
+    }
     return 0;
 }
 int isANum(char x){

@@ -74,12 +74,15 @@ int main(){
         switch(choice){
         case 1:
             push();
+            printf("\n");
             break;
         case 2:
             pop();
+            printf("\n");
             break;
         case 3:
             peek();
+            printf("\n");
             break;
         case 4:
             if(isEmpty()){
@@ -88,6 +91,7 @@ int main(){
             else{
                 printf("stack is not empty\n");
             }
+            printf("\n");
             break;
         case 5:
             if(isFull()){
@@ -96,6 +100,7 @@ int main(){
             else{
                 printf("stack is not full\n");
             }
+            printf("\n");
             break;
         case 6:
             display();
