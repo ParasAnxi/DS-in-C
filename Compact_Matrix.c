@@ -8,7 +8,7 @@ int main(){
         {0 , 0 , 0 , 0 , 0 },
         {0 , 2 , 6 , 0 , 0 }
     };
- 
+    
     int size = 0;
     for (int i = 0; i < 4; i++)
         for (int j = 0; j < 5; j++)

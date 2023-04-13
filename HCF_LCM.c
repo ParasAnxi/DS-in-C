@@ -2,26 +2,30 @@
 #include<math.h>
 #include<stdlib.h>
 int factorial(int x){
-    int fact=1;    
-    for(int i=1;i<=x;i++){    
-      fact=fact*i;    
-  }    
-  return fact;
+    if (x>=1)
+        return x*factorial(x-1);
+    else
+        return 1;
 }
-int hcf(int x, int y){
-    if (y == 0)
-    return x;
-  else
-    return hcf(y, x % y);   
+int hcf(int x, int y) {
+    if (y != 0)
+        return hcf(y, x % y);
+    else
+        return x;
 }
-int lcm(int x,int y){
-    return x*y/(hcf(x,y));
-}
-int sum(int x){
-    int sum = 0;
-    for (int i = 1; i <= x; i++) {
-        sum += i;
+int lcm(int x, int y){
+    static int common = 1;
+    if (common %  x == 0 && common % y == 0){
+        return common;
     }
+    common++;
+    lcm(x,y);
+}
+int sum(int n) {
+  if (n != 0)
+    return n + sum(n - 1);
+  else
+    return n;
 }
 int main(){
     int n;

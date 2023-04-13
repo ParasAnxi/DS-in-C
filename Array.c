@@ -16,6 +16,7 @@ void insert(){
 }
 int del(){
     if(ind == -1){
+        printf("Empty array\n");
         return -1;
     }
     else{
