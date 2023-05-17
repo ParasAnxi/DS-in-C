@@ -75,7 +75,20 @@ void display(){
         }while(temp!=head->next);
     }
 }
-
+void deleteLast(){
+    struct Node* temp, *t;
+    if(head == NULL){
+        printf("List is empty\n");
+    }
+    temp = head->next;  
+    while(temp->next!=head){
+        temp = temp->next;
+    }
+    t = head;
+    temp->next = head->next;
+    head = temp;
+    free(t);
+}
 int main(){
     insertAtHead(10);
     insertAtHead(20);
@@ -95,6 +108,13 @@ int main(){
     deleteFirst();
     display();
     printf("\n");
- 
+    
+    deleteLast();
+    display();
+    printf("\n");
+    deleteLast();
+    display();
+    printf("\n");
+    
     return 0;
 }
