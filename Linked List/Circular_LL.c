@@ -62,19 +62,6 @@ void deleteFirst(){
         free(temp);
     }
 }
-void display(){
-    if(head == NULL){
-        printf("List is empty\n");
-    }
-    else{
-        struct Node* temp;
-        temp = head->next;
-        do{
-            printf("%d ",temp->data);
-            temp = temp->next;
-        }while(temp!=head->next);
-    }
-}
 void deleteLast(){
     struct Node* temp, *t;
     if(head == NULL){
@@ -88,6 +75,38 @@ void deleteLast(){
     temp->next = head->next;
     head = temp;
     free(t);
+}
+void deleteAtPos(int pos){
+    int i = 1;
+    struct Node* temp,*position;
+    temp = head->next;
+
+    if(head == NULL){
+        printf("List is empty\n");
+    }
+    else{
+        while(i<pos-1){
+            temp = temp->next;
+            i++;
+        }
+        position = temp->next;
+        temp->next = position->next;
+
+        free(position);
+    }
+}
+void display(){
+    if(head == NULL){
+        printf("List is empty\n");
+    }
+    else{
+        struct Node* temp;
+        temp = head->next;
+        do{
+            printf("%d ",temp->data);
+            temp = temp->next;
+        }while(temp!=head->next);
+    }
 }
 int main(){
     insertAtHead(10);
@@ -113,6 +132,9 @@ int main(){
     display();
     printf("\n");
     deleteLast();
+    display();
+    printf("\n");
+    deleteAtPos(3);
     display();
     printf("\n");
     
