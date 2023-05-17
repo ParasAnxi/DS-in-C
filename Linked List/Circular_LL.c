@@ -95,6 +95,16 @@ void deleteAtPos(int pos){
         free(position);
     }
 }
+int count(){
+    int cnt = 0;
+    struct Node* curr = head;
+
+    do{
+        curr = curr->next;
+        cnt++;
+    }while(curr!=head);
+    return cnt;
+}
 void display(){
     if(head == NULL){
         printf("List is empty\n");
@@ -137,6 +147,6 @@ int main(){
     deleteAtPos(3);
     display();
     printf("\n");
-    
+    printf("%d",count());
     return 0;
 }
