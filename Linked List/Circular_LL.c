@@ -51,6 +51,17 @@ void insertAtPos(int data,int pos){
         }
     }while(temp!=head->next);
 }
+void deleteFirst(){
+    struct Node* temp;
+    if(head == NULL){
+        printf("List is empty\n");
+    }
+    else{
+        temp = head->next;
+        head->next = temp->next;
+        free(temp);
+    }
+}
 void display(){
     if(head == NULL){
         printf("List is empty\n");
@@ -77,6 +88,13 @@ int main(){
     insertAtTail(90);
     insertAtPos(100,80);
     display();
+    printf("\n");
+    deleteFirst();
+    display();
+    printf("\n");
+    deleteFirst();
+    display();
+    printf("\n");
  
     return 0;
 }
