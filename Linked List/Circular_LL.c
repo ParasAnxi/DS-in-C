@@ -18,6 +18,20 @@ void insertAtHead(int data){
         head->next = temp;
     }
 }
+void insertAtTail(int data){
+    struct Node* temp = (struct Node*)malloc(sizeof(struct Node));
+    if(head == NULL){
+        temp->data = data;
+        temp->next = temp;
+        head = temp;
+    }
+    else{
+        temp->data = data;
+        temp->next = head->next;
+        head->next = temp;
+        head = temp;
+    }
+}
 void display(){
     if(head == NULL){
         printf("List is empty\n");
@@ -39,6 +53,9 @@ int main(){
     insertAtHead(40);
     insertAtHead(50);
     insertAtHead(60);
+    insertAtTail(70);
+    insertAtTail(80);
+    insertAtTail(90);
     display();
  
     return 0;
