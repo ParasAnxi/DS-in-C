@@ -32,6 +32,25 @@ void insertAtTail(int data){
         head = temp;
     }
 }
+void insertAtPos(int data,int pos){
+    struct Node *temp,*node;
+    temp = head->next;
+    do{
+        if(temp->data == pos){
+            node = (struct Node*)malloc(sizeof(struct Node));
+            node->data = data;
+            node->next = temp->next;
+            temp->next = node;
+
+            if(temp == head)
+                head = node;
+            break;
+        }
+        else{
+            temp = temp->next;
+        }
+    }while(temp!=head->next);
+}
 void display(){
     if(head == NULL){
         printf("List is empty\n");
@@ -56,6 +75,7 @@ int main(){
     insertAtTail(70);
     insertAtTail(80);
     insertAtTail(90);
+    insertAtPos(100,80);
     display();
  
     return 0;
