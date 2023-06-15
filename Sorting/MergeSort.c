@@ -19,26 +19,19 @@ void merge(int arr[], int s, int m, int e){
     k = s;
     while (i < len1 && j < len2){
         if (first[i] <= second[j]){
-            arr[k] = first[i];
-            i++;
+            arr[k++] = first[i++];
         }
         else{
-            arr[k] = second[j];
-            j++;
+            arr[k++] = second[j++];
         }
-        k++;
     }
 
     while (i < len1) {
-        arr[k] = first[i];
-        i++;
-        k++;
+        arr[k++] = first[i++];
     }
 
     while (j < len2){
-        arr[k] = second[j];
-        j++;
-        k++;
+        arr[k++] = second[j++]; 
     }
 }
  
