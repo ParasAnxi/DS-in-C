@@ -15,21 +15,11 @@ void init(Graph* g){
         }
     }
     //hardcoded edges u -> v && v -> u (undirected)
-    g->adj[0][1] = 2;
-    g->adj[1][0] = 2;
-    g->adj[0][3] = 6;
-    g->adj[3][0] = 6;
-    g->adj[1][2] = 3;
-    g->adj[2][1] = 3;
-    g->adj[1][3] = 8;
-    g->adj[3][1] = 8;
-    g->adj[1][4] = 5;
-    g->adj[4][1] = 5;
-    g->adj[2][4] = 7;
-    g->adj[4][2] = 7;
-    g->adj[3][4] = 10;
-    g->adj[4][3] = 9;
-};
+    g->adj[0][1] = 2; g->adj[1][0] = 2; g->adj[0][3] = 6; g->adj[3][0] = 6; g->adj[1][2] = 3; 
+    g->adj[2][1] = 3; g->adj[1][3] = 8; g->adj[3][1] = 8; g->adj[1][4] = 5; g->adj[4][1] = 5; 
+    g->adj[2][4] = 7; g->adj[4][2] = 7; g->adj[3][4] = 10; g->adj[4][3] = 9;
+}
+ 
 void printAdjMat(Graph* g){
     for(int i = 0; i < g->v;i++){
         for(int j = 0 ; j < g->v;j++){
